@@ -1,0 +1,56 @@
+/* Print styles for ATS Resume Preview */
+@media print {
+  /* Hide all dashboard/UI elements */
+  body * {
+    visibility: hidden;
+  }
+
+  /* Make only the resume print container and its children visible */
+  #resume-print-area,
+  #resume-print-area * {
+    visibility: visible;
+  }
+
+  /* Position print area at the absolute top-left */
+  #resume-print-area {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    box-shadow: none !important;
+    background: white !important;
+    color: black !important;
+  }
+
+  /* Reset body and html styles for print */
+  html, body {
+    width: 100%;
+    height: auto;
+    background: white !important;
+    color: black !important;
+    margin: 0;
+    padding: 0;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+
+  /* Page breaks optimization */
+  .resume-section-item {
+    page-break-inside: avoid;
+    break-inside: avoid;
+  }
+
+  /* Headings decoration */
+  .resume-section-title {
+    page-break-after: avoid;
+    break-after: avoid;
+  }
+
+  /* Spacing adjustments for print */
+  @page {
+    size: letter;
+    margin: 0.5in;
+  }
+}
